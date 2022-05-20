@@ -1,0 +1,2487 @@
+{
+	"openapi": "3.1.0",
+	"info": {
+	  "title": "GiftReactApp",
+	  "contact": {},
+	  "version": "1.0"
+	},
+	"jsonSchemaDialect": "https://json-schema.org/draft/2020-12/schema",
+	"servers": [
+	  {
+		"url": "http://example.com",
+		"variables": {}
+	  }
+	],
+	"paths": {
+	  "/token": {
+		"post": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "TokenGenerator",
+		  "operationId": "TokenGenerator",
+		  "parameters": [],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/TokenGeneratorRequest"
+				},
+				"example": {
+				  "username": "user1",
+				  "password": "password1"
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false
+		},
+		"parameters": []
+	  },
+	  "/upload": {
+		"post": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "FileUpload",
+		  "operationId": "FileUpload",
+		  "parameters": [
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"content": {
+			  "application/x-www-form-urlencoded": {
+				"encoding": {},
+				"schema": {
+				  "required": [
+					"file"
+				  ],
+				  "type": "object",
+				  "properties": {
+					"file": {
+					  "type": "string"
+					}
+				  },
+				  "contentMediaType": "application/x-www-form-urlencoded"
+				}
+			  }
+			},
+			"required": false
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/customer": {
+		"post": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - Add",
+		  "operationId": "Customer-Add",
+		  "parameters": [],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Customer-AddRequest"
+				},
+				"example": {
+				  "CustomerId": "",
+				  "CustName": "",
+				  "CustIdentity": "",
+				  "CustCert": "",
+				  "CustDocType": "",
+				  "CustFinalDate": "",
+				  "CustActivationDate": "",
+				  "CustSale": "",
+				  "CustPay": "",
+				  "CustReLoad": "",
+				  "CustStatus": "",
+				  "CustInfoAdic1": "",
+				  "CustInfoAdic2": "",
+				  "CustInfoAdic3": "",
+				  "CustInfoAdic4": "",
+				  "CustDateAdic1": "",
+				  "CustDateAdic2": "",
+				  "CustValueAdic1": "",
+				  "CustValueAdic2": "",
+				  "CustValueAdic3": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/customer/${CustomerId}": {
+		"patch": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - Update Only Passed Columns",
+		  "operationId": "Customer-UpdateOnlyPassedColumns",
+		  "parameters": [
+			{
+			  "name": "CustomerId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Customer-UpdateOnlyPassedColumnsRequest"
+				},
+				"example": {
+				  "CustomerId": "",
+				  "CustName": "",
+				  "CustIdentity": "",
+				  "CustCert": "",
+				  "CustDocType": "",
+				  "CustFinalDate": "",
+				  "CustActivationDate": "",
+				  "CustSale": "",
+				  "CustPay": "",
+				  "CustReLoad": "",
+				  "CustStatus": "",
+				  "CustInfoAdic1": "",
+				  "CustInfoAdic2": "",
+				  "CustInfoAdic3": "",
+				  "CustInfoAdic4": "",
+				  "CustDateAdic1": "",
+				  "CustDateAdic2": "",
+				  "CustValueAdic1": "",
+				  "CustValueAdic2": "",
+				  "CustValueAdic3": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"put": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - Update",
+		  "operationId": "Customer-Update",
+		  "parameters": [
+			{
+			  "name": "CustomerId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Customer-UpdateRequest"
+				},
+				"example": {
+				  "CustomerId": "",
+				  "CustName": "",
+				  "CustIdentity": "",
+				  "CustCert": "",
+				  "CustDocType": "",
+				  "CustFinalDate": "",
+				  "CustActivationDate": "",
+				  "CustSale": "",
+				  "CustPay": "",
+				  "CustReLoad": "",
+				  "CustStatus": "",
+				  "CustInfoAdic1": "",
+				  "CustInfoAdic2": "",
+				  "CustInfoAdic3": "",
+				  "CustInfoAdic4": "",
+				  "CustDateAdic1": "",
+				  "CustDateAdic2": "",
+				  "CustValueAdic1": "",
+				  "CustValueAdic2": "",
+				  "CustValueAdic3": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - GetById",
+		  "operationId": "Customer-GetById",
+		  "parameters": [
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "CustomerId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"delete": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - Delete",
+		  "operationId": "Customer-Delete",
+		  "parameters": [
+			{
+			  "name": "CustomerId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Customer-DeleteRequest"
+				},
+				"example": {
+				  "CustomerId": "",
+				  "CustName": "",
+				  "CustIdentity": "",
+				  "CustCert": "",
+				  "CustDocType": "",
+				  "CustFinalDate": "",
+				  "CustActivationDate": "",
+				  "CustSale": "",
+				  "CustPay": "",
+				  "CustReLoad": "",
+				  "CustStatus": "",
+				  "CustInfoAdic1": "",
+				  "CustInfoAdic2": "",
+				  "CustInfoAdic3": "",
+				  "CustInfoAdic4": "",
+				  "CustDateAdic1": "",
+				  "CustDateAdic2": "",
+				  "CustValueAdic1": "",
+				  "CustValueAdic2": "",
+				  "CustValueAdic3": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/customer/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - GetAll",
+		  "operationId": "Customer-GetAll",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  100
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/customer/search/${searchKey}/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Customer - Search",
+		  "operationId": "Customer-Search",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  30
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "searchKey",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/document": {
+		"post": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - Add",
+		  "operationId": "Document-Add",
+		  "parameters": [],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Document-AddRequest"
+				},
+				"example": {
+				  "DocumentId": "",
+				  "CustomerId": "",
+				  "DocType": "",
+				  "DocIdentity": "",
+				  "CreatedDate": "",
+				  "ActivateDate": "",
+				  "CancelDate": "",
+				  "InAmount": "",
+				  "OutAmount": "",
+				  "BalanceAmount": "",
+				  "DocStatus": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/document/${DocumentId}": {
+		"patch": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - Update Only Passed Columns",
+		  "operationId": "Document-UpdateOnlyPassedColumns",
+		  "parameters": [
+			{
+			  "name": "DocumentId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Document-UpdateOnlyPassedColumnsRequest"
+				},
+				"example": {
+				  "DocumentId": "",
+				  "CustomerId": "",
+				  "DocType": "",
+				  "DocIdentity": "",
+				  "CreatedDate": "",
+				  "ActivateDate": "",
+				  "CancelDate": "",
+				  "InAmount": "",
+				  "OutAmount": "",
+				  "BalanceAmount": "",
+				  "DocStatus": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"put": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - Update",
+		  "operationId": "Document-Update",
+		  "parameters": [
+			{
+			  "name": "DocumentId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Document-UpdateRequest"
+				},
+				"example": {
+				  "DocumentId": "",
+				  "CustomerId": "",
+				  "DocType": "",
+				  "DocIdentity": "",
+				  "CreatedDate": "",
+				  "ActivateDate": "",
+				  "CancelDate": "",
+				  "InAmount": "",
+				  "OutAmount": "",
+				  "BalanceAmount": "",
+				  "DocStatus": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - GetById",
+		  "operationId": "Document-GetById",
+		  "parameters": [
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "DocumentId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"delete": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - Delete",
+		  "operationId": "Document-Delete",
+		  "parameters": [
+			{
+			  "name": "DocumentId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Document-DeleteRequest"
+				},
+				"example": {
+				  "DocumentId": "",
+				  "CustomerId": "",
+				  "DocType": "",
+				  "DocIdentity": "",
+				  "CreatedDate": "",
+				  "ActivateDate": "",
+				  "CancelDate": "",
+				  "InAmount": "",
+				  "OutAmount": "",
+				  "BalanceAmount": "",
+				  "DocStatus": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/document/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - GetAll",
+		  "operationId": "Document-GetAll",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  100
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/document/getby/CustomerId/${CustomerId}/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - GetByFK_CustomerId",
+		  "operationId": "Document-GetByFK_CustomerId",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  30
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "CustomerId",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/document/search/${searchKey}/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Document - Search",
+		  "operationId": "Document-Search",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  30
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "searchKey",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/users": {
+		"post": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - Add",
+		  "operationId": "Users-Add",
+		  "parameters": [],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Users-AddRequest"
+				},
+				"example": {
+				  "Id": "",
+				  "AccountId": "",
+				  "UserName": "",
+				  "Password": "",
+				  "Email": "",
+				  "IsActive": "",
+				  "IsAdmin": "",
+				  "LastLoginTime": "",
+				  "CreatedDate": "",
+				  "Creator": "",
+				  "ModifiedDate": "",
+				  "Modifier": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/users/${Id}": {
+		"patch": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - Update Only Passed Columns",
+		  "operationId": "Users-UpdateOnlyPassedColumns",
+		  "parameters": [
+			{
+			  "name": "Id",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Users-UpdateOnlyPassedColumnsRequest"
+				},
+				"example": {
+				  "Id": "",
+				  "AccountId": "",
+				  "UserName": "",
+				  "Password": "",
+				  "Email": "",
+				  "IsActive": "",
+				  "IsAdmin": "",
+				  "LastLoginTime": "",
+				  "CreatedDate": "",
+				  "Creator": "",
+				  "ModifiedDate": "",
+				  "Modifier": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"put": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - Update",
+		  "operationId": "Users-Update",
+		  "parameters": [
+			{
+			  "name": "Id",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Users-UpdateRequest"
+				},
+				"example": {
+				  "Id": "",
+				  "AccountId": "",
+				  "UserName": "",
+				  "Password": "",
+				  "Email": "",
+				  "IsActive": "",
+				  "IsAdmin": "",
+				  "LastLoginTime": "",
+				  "CreatedDate": "",
+				  "Creator": "",
+				  "ModifiedDate": "",
+				  "Modifier": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - GetById",
+		  "operationId": "Users-GetById",
+		  "parameters": [
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "Id",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"delete": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - Delete",
+		  "operationId": "Users-Delete",
+		  "parameters": [
+			{
+			  "name": "Id",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "requestBody": {
+			"description": "",
+			"content": {
+			  "application/json": {
+				"schema": {
+				  "$ref": "#/components/schemas/Users-DeleteRequest"
+				},
+				"example": {
+				  "Id": "",
+				  "AccountId": "",
+				  "UserName": "",
+				  "Password": "",
+				  "Email": "",
+				  "IsActive": "",
+				  "IsAdmin": "",
+				  "LastLoginTime": "",
+				  "CreatedDate": "",
+				  "Creator": "",
+				  "ModifiedDate": "",
+				  "Modifier": ""
+				}
+			  }
+			},
+			"required": true
+		  },
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/users/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - GetAll",
+		  "operationId": "Users-GetAll",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  100
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  },
+	  "/users/search/${searchKey}/": {
+		"get": {
+		  "tags": [
+			"Misc"
+		  ],
+		  "summary": "Users - Search",
+		  "operationId": "Users-Search",
+		  "parameters": [
+			{
+			  "name": "pageNo",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  1
+				]
+			  }
+			},
+			{
+			  "name": "pageSize",
+			  "in": "query",
+			  "description": "",
+			  "required": true,
+			  "style": "form",
+			  "explode": true,
+			  "schema": {
+				"type": "integer",
+				"contentEncoding": "int32",
+				"examples": [
+				  30
+				]
+			  }
+			},
+			{
+			  "name": "Content-Type",
+			  "in": "header",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"const": "application/json",
+				"type": "string",
+				"examples": [
+				  "application/json"
+				]
+			  }
+			},
+			{
+			  "name": "searchKey",
+			  "in": "path",
+			  "description": "",
+			  "required": true,
+			  "style": "simple",
+			  "schema": {
+				"type": "string"
+			  }
+			}
+		  ],
+		  "responses": {
+			"200": {
+			  "description": "",
+			  "headers": {}
+			}
+		  },
+		  "deprecated": false,
+		  "security": [
+			{
+			  "bearer": []
+			}
+		  ]
+		},
+		"parameters": []
+	  }
+	},
+	"components": {
+	  "schemas": {
+		"TokenGeneratorRequest": {
+		  "title": "TokenGeneratorRequest",
+		  "required": [
+			"username",
+			"password"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"username": {
+			  "type": "string"
+			},
+			"password": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "username": "user1",
+			  "password": "password1"
+			}
+		  ]
+		},
+		"Customer-AddRequest": {
+		  "title": "Customer-AddRequest",
+		  "required": [
+			"CustomerId",
+			"CustName",
+			"CustIdentity",
+			"CustCert",
+			"CustDocType",
+			"CustFinalDate",
+			"CustActivationDate",
+			"CustSale",
+			"CustPay",
+			"CustReLoad",
+			"CustStatus",
+			"CustInfoAdic1",
+			"CustInfoAdic2",
+			"CustInfoAdic3",
+			"CustInfoAdic4",
+			"CustDateAdic1",
+			"CustDateAdic2",
+			"CustValueAdic1",
+			"CustValueAdic2",
+			"CustValueAdic3"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"CustomerId": {
+			  "type": "string"
+			},
+			"CustName": {
+			  "type": "string"
+			},
+			"CustIdentity": {
+			  "type": "string"
+			},
+			"CustCert": {
+			  "type": "string"
+			},
+			"CustDocType": {
+			  "type": "string"
+			},
+			"CustFinalDate": {
+			  "type": "string"
+			},
+			"CustActivationDate": {
+			  "type": "string"
+			},
+			"CustSale": {
+			  "type": "string"
+			},
+			"CustPay": {
+			  "type": "string"
+			},
+			"CustReLoad": {
+			  "type": "string"
+			},
+			"CustStatus": {
+			  "type": "string"
+			},
+			"CustInfoAdic1": {
+			  "type": "string"
+			},
+			"CustInfoAdic2": {
+			  "type": "string"
+			},
+			"CustInfoAdic3": {
+			  "type": "string"
+			},
+			"CustInfoAdic4": {
+			  "type": "string"
+			},
+			"CustDateAdic1": {
+			  "type": "string"
+			},
+			"CustDateAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic1": {
+			  "type": "string"
+			},
+			"CustValueAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic3": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "CustomerId": "",
+			  "CustName": "",
+			  "CustIdentity": "",
+			  "CustCert": "",
+			  "CustDocType": "",
+			  "CustFinalDate": "",
+			  "CustActivationDate": "",
+			  "CustSale": "",
+			  "CustPay": "",
+			  "CustReLoad": "",
+			  "CustStatus": "",
+			  "CustInfoAdic1": "",
+			  "CustInfoAdic2": "",
+			  "CustInfoAdic3": "",
+			  "CustInfoAdic4": "",
+			  "CustDateAdic1": "",
+			  "CustDateAdic2": "",
+			  "CustValueAdic1": "",
+			  "CustValueAdic2": "",
+			  "CustValueAdic3": ""
+			}
+		  ]
+		},
+		"Customer-UpdateOnlyPassedColumnsRequest": {
+		  "title": "Customer-UpdateOnlyPassedColumnsRequest",
+		  "required": [
+			"CustomerId",
+			"CustName",
+			"CustIdentity",
+			"CustCert",
+			"CustDocType",
+			"CustFinalDate",
+			"CustActivationDate",
+			"CustSale",
+			"CustPay",
+			"CustReLoad",
+			"CustStatus",
+			"CustInfoAdic1",
+			"CustInfoAdic2",
+			"CustInfoAdic3",
+			"CustInfoAdic4",
+			"CustDateAdic1",
+			"CustDateAdic2",
+			"CustValueAdic1",
+			"CustValueAdic2",
+			"CustValueAdic3"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"CustomerId": {
+			  "type": "string"
+			},
+			"CustName": {
+			  "type": "string"
+			},
+			"CustIdentity": {
+			  "type": "string"
+			},
+			"CustCert": {
+			  "type": "string"
+			},
+			"CustDocType": {
+			  "type": "string"
+			},
+			"CustFinalDate": {
+			  "type": "string"
+			},
+			"CustActivationDate": {
+			  "type": "string"
+			},
+			"CustSale": {
+			  "type": "string"
+			},
+			"CustPay": {
+			  "type": "string"
+			},
+			"CustReLoad": {
+			  "type": "string"
+			},
+			"CustStatus": {
+			  "type": "string"
+			},
+			"CustInfoAdic1": {
+			  "type": "string"
+			},
+			"CustInfoAdic2": {
+			  "type": "string"
+			},
+			"CustInfoAdic3": {
+			  "type": "string"
+			},
+			"CustInfoAdic4": {
+			  "type": "string"
+			},
+			"CustDateAdic1": {
+			  "type": "string"
+			},
+			"CustDateAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic1": {
+			  "type": "string"
+			},
+			"CustValueAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic3": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "CustomerId": "",
+			  "CustName": "",
+			  "CustIdentity": "",
+			  "CustCert": "",
+			  "CustDocType": "",
+			  "CustFinalDate": "",
+			  "CustActivationDate": "",
+			  "CustSale": "",
+			  "CustPay": "",
+			  "CustReLoad": "",
+			  "CustStatus": "",
+			  "CustInfoAdic1": "",
+			  "CustInfoAdic2": "",
+			  "CustInfoAdic3": "",
+			  "CustInfoAdic4": "",
+			  "CustDateAdic1": "",
+			  "CustDateAdic2": "",
+			  "CustValueAdic1": "",
+			  "CustValueAdic2": "",
+			  "CustValueAdic3": ""
+			}
+		  ]
+		},
+		"Customer-UpdateRequest": {
+		  "title": "Customer-UpdateRequest",
+		  "required": [
+			"CustomerId",
+			"CustName",
+			"CustIdentity",
+			"CustCert",
+			"CustDocType",
+			"CustFinalDate",
+			"CustActivationDate",
+			"CustSale",
+			"CustPay",
+			"CustReLoad",
+			"CustStatus",
+			"CustInfoAdic1",
+			"CustInfoAdic2",
+			"CustInfoAdic3",
+			"CustInfoAdic4",
+			"CustDateAdic1",
+			"CustDateAdic2",
+			"CustValueAdic1",
+			"CustValueAdic2",
+			"CustValueAdic3"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"CustomerId": {
+			  "type": "string"
+			},
+			"CustName": {
+			  "type": "string"
+			},
+			"CustIdentity": {
+			  "type": "string"
+			},
+			"CustCert": {
+			  "type": "string"
+			},
+			"CustDocType": {
+			  "type": "string"
+			},
+			"CustFinalDate": {
+			  "type": "string"
+			},
+			"CustActivationDate": {
+			  "type": "string"
+			},
+			"CustSale": {
+			  "type": "string"
+			},
+			"CustPay": {
+			  "type": "string"
+			},
+			"CustReLoad": {
+			  "type": "string"
+			},
+			"CustStatus": {
+			  "type": "string"
+			},
+			"CustInfoAdic1": {
+			  "type": "string"
+			},
+			"CustInfoAdic2": {
+			  "type": "string"
+			},
+			"CustInfoAdic3": {
+			  "type": "string"
+			},
+			"CustInfoAdic4": {
+			  "type": "string"
+			},
+			"CustDateAdic1": {
+			  "type": "string"
+			},
+			"CustDateAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic1": {
+			  "type": "string"
+			},
+			"CustValueAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic3": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "CustomerId": "",
+			  "CustName": "",
+			  "CustIdentity": "",
+			  "CustCert": "",
+			  "CustDocType": "",
+			  "CustFinalDate": "",
+			  "CustActivationDate": "",
+			  "CustSale": "",
+			  "CustPay": "",
+			  "CustReLoad": "",
+			  "CustStatus": "",
+			  "CustInfoAdic1": "",
+			  "CustInfoAdic2": "",
+			  "CustInfoAdic3": "",
+			  "CustInfoAdic4": "",
+			  "CustDateAdic1": "",
+			  "CustDateAdic2": "",
+			  "CustValueAdic1": "",
+			  "CustValueAdic2": "",
+			  "CustValueAdic3": ""
+			}
+		  ]
+		},
+		"Customer-DeleteRequest": {
+		  "title": "Customer-DeleteRequest",
+		  "required": [
+			"CustomerId",
+			"CustName",
+			"CustIdentity",
+			"CustCert",
+			"CustDocType",
+			"CustFinalDate",
+			"CustActivationDate",
+			"CustSale",
+			"CustPay",
+			"CustReLoad",
+			"CustStatus",
+			"CustInfoAdic1",
+			"CustInfoAdic2",
+			"CustInfoAdic3",
+			"CustInfoAdic4",
+			"CustDateAdic1",
+			"CustDateAdic2",
+			"CustValueAdic1",
+			"CustValueAdic2",
+			"CustValueAdic3"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"CustomerId": {
+			  "type": "string"
+			},
+			"CustName": {
+			  "type": "string"
+			},
+			"CustIdentity": {
+			  "type": "string"
+			},
+			"CustCert": {
+			  "type": "string"
+			},
+			"CustDocType": {
+			  "type": "string"
+			},
+			"CustFinalDate": {
+			  "type": "string"
+			},
+			"CustActivationDate": {
+			  "type": "string"
+			},
+			"CustSale": {
+			  "type": "string"
+			},
+			"CustPay": {
+			  "type": "string"
+			},
+			"CustReLoad": {
+			  "type": "string"
+			},
+			"CustStatus": {
+			  "type": "string"
+			},
+			"CustInfoAdic1": {
+			  "type": "string"
+			},
+			"CustInfoAdic2": {
+			  "type": "string"
+			},
+			"CustInfoAdic3": {
+			  "type": "string"
+			},
+			"CustInfoAdic4": {
+			  "type": "string"
+			},
+			"CustDateAdic1": {
+			  "type": "string"
+			},
+			"CustDateAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic1": {
+			  "type": "string"
+			},
+			"CustValueAdic2": {
+			  "type": "string"
+			},
+			"CustValueAdic3": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "CustomerId": "",
+			  "CustName": "",
+			  "CustIdentity": "",
+			  "CustCert": "",
+			  "CustDocType": "",
+			  "CustFinalDate": "",
+			  "CustActivationDate": "",
+			  "CustSale": "",
+			  "CustPay": "",
+			  "CustReLoad": "",
+			  "CustStatus": "",
+			  "CustInfoAdic1": "",
+			  "CustInfoAdic2": "",
+			  "CustInfoAdic3": "",
+			  "CustInfoAdic4": "",
+			  "CustDateAdic1": "",
+			  "CustDateAdic2": "",
+			  "CustValueAdic1": "",
+			  "CustValueAdic2": "",
+			  "CustValueAdic3": ""
+			}
+		  ]
+		},
+		"Document-AddRequest": {
+		  "title": "Document-AddRequest",
+		  "required": [
+			"DocumentId",
+			"CustomerId",
+			"DocType",
+			"DocIdentity",
+			"CreatedDate",
+			"ActivateDate",
+			"CancelDate",
+			"InAmount",
+			"OutAmount",
+			"BalanceAmount",
+			"DocStatus"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"DocumentId": {
+			  "type": "string"
+			},
+			"CustomerId": {
+			  "type": "string"
+			},
+			"DocType": {
+			  "type": "string"
+			},
+			"DocIdentity": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"ActivateDate": {
+			  "type": "string"
+			},
+			"CancelDate": {
+			  "type": "string"
+			},
+			"InAmount": {
+			  "type": "string"
+			},
+			"OutAmount": {
+			  "type": "string"
+			},
+			"BalanceAmount": {
+			  "type": "string"
+			},
+			"DocStatus": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "DocumentId": "",
+			  "CustomerId": "",
+			  "DocType": "",
+			  "DocIdentity": "",
+			  "CreatedDate": "",
+			  "ActivateDate": "",
+			  "CancelDate": "",
+			  "InAmount": "",
+			  "OutAmount": "",
+			  "BalanceAmount": "",
+			  "DocStatus": ""
+			}
+		  ]
+		},
+		"Document-UpdateOnlyPassedColumnsRequest": {
+		  "title": "Document-UpdateOnlyPassedColumnsRequest",
+		  "required": [
+			"DocumentId",
+			"CustomerId",
+			"DocType",
+			"DocIdentity",
+			"CreatedDate",
+			"ActivateDate",
+			"CancelDate",
+			"InAmount",
+			"OutAmount",
+			"BalanceAmount",
+			"DocStatus"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"DocumentId": {
+			  "type": "string"
+			},
+			"CustomerId": {
+			  "type": "string"
+			},
+			"DocType": {
+			  "type": "string"
+			},
+			"DocIdentity": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"ActivateDate": {
+			  "type": "string"
+			},
+			"CancelDate": {
+			  "type": "string"
+			},
+			"InAmount": {
+			  "type": "string"
+			},
+			"OutAmount": {
+			  "type": "string"
+			},
+			"BalanceAmount": {
+			  "type": "string"
+			},
+			"DocStatus": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "DocumentId": "",
+			  "CustomerId": "",
+			  "DocType": "",
+			  "DocIdentity": "",
+			  "CreatedDate": "",
+			  "ActivateDate": "",
+			  "CancelDate": "",
+			  "InAmount": "",
+			  "OutAmount": "",
+			  "BalanceAmount": "",
+			  "DocStatus": ""
+			}
+		  ]
+		},
+		"Document-UpdateRequest": {
+		  "title": "Document-UpdateRequest",
+		  "required": [
+			"DocumentId",
+			"CustomerId",
+			"DocType",
+			"DocIdentity",
+			"CreatedDate",
+			"ActivateDate",
+			"CancelDate",
+			"InAmount",
+			"OutAmount",
+			"BalanceAmount",
+			"DocStatus"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"DocumentId": {
+			  "type": "string"
+			},
+			"CustomerId": {
+			  "type": "string"
+			},
+			"DocType": {
+			  "type": "string"
+			},
+			"DocIdentity": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"ActivateDate": {
+			  "type": "string"
+			},
+			"CancelDate": {
+			  "type": "string"
+			},
+			"InAmount": {
+			  "type": "string"
+			},
+			"OutAmount": {
+			  "type": "string"
+			},
+			"BalanceAmount": {
+			  "type": "string"
+			},
+			"DocStatus": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "DocumentId": "",
+			  "CustomerId": "",
+			  "DocType": "",
+			  "DocIdentity": "",
+			  "CreatedDate": "",
+			  "ActivateDate": "",
+			  "CancelDate": "",
+			  "InAmount": "",
+			  "OutAmount": "",
+			  "BalanceAmount": "",
+			  "DocStatus": ""
+			}
+		  ]
+		},
+		"Document-DeleteRequest": {
+		  "title": "Document-DeleteRequest",
+		  "required": [
+			"DocumentId",
+			"CustomerId",
+			"DocType",
+			"DocIdentity",
+			"CreatedDate",
+			"ActivateDate",
+			"CancelDate",
+			"InAmount",
+			"OutAmount",
+			"BalanceAmount",
+			"DocStatus"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"DocumentId": {
+			  "type": "string"
+			},
+			"CustomerId": {
+			  "type": "string"
+			},
+			"DocType": {
+			  "type": "string"
+			},
+			"DocIdentity": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"ActivateDate": {
+			  "type": "string"
+			},
+			"CancelDate": {
+			  "type": "string"
+			},
+			"InAmount": {
+			  "type": "string"
+			},
+			"OutAmount": {
+			  "type": "string"
+			},
+			"BalanceAmount": {
+			  "type": "string"
+			},
+			"DocStatus": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "DocumentId": "",
+			  "CustomerId": "",
+			  "DocType": "",
+			  "DocIdentity": "",
+			  "CreatedDate": "",
+			  "ActivateDate": "",
+			  "CancelDate": "",
+			  "InAmount": "",
+			  "OutAmount": "",
+			  "BalanceAmount": "",
+			  "DocStatus": ""
+			}
+		  ]
+		},
+		"Users-AddRequest": {
+		  "title": "Users-AddRequest",
+		  "required": [
+			"Id",
+			"AccountId",
+			"UserName",
+			"Password",
+			"Email",
+			"IsActive",
+			"IsAdmin",
+			"LastLoginTime",
+			"CreatedDate",
+			"Creator",
+			"ModifiedDate",
+			"Modifier"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"Id": {
+			  "type": "string"
+			},
+			"AccountId": {
+			  "type": "string"
+			},
+			"UserName": {
+			  "type": "string"
+			},
+			"Password": {
+			  "type": "string"
+			},
+			"Email": {
+			  "type": "string"
+			},
+			"IsActive": {
+			  "type": "string"
+			},
+			"IsAdmin": {
+			  "type": "string"
+			},
+			"LastLoginTime": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"Creator": {
+			  "type": "string"
+			},
+			"ModifiedDate": {
+			  "type": "string"
+			},
+			"Modifier": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "Id": "",
+			  "AccountId": "",
+			  "UserName": "",
+			  "Password": "",
+			  "Email": "",
+			  "IsActive": "",
+			  "IsAdmin": "",
+			  "LastLoginTime": "",
+			  "CreatedDate": "",
+			  "Creator": "",
+			  "ModifiedDate": "",
+			  "Modifier": ""
+			}
+		  ]
+		},
+		"Users-UpdateOnlyPassedColumnsRequest": {
+		  "title": "Users-UpdateOnlyPassedColumnsRequest",
+		  "required": [
+			"Id",
+			"AccountId",
+			"UserName",
+			"Password",
+			"Email",
+			"IsActive",
+			"IsAdmin",
+			"LastLoginTime",
+			"CreatedDate",
+			"Creator",
+			"ModifiedDate",
+			"Modifier"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"Id": {
+			  "type": "string"
+			},
+			"AccountId": {
+			  "type": "string"
+			},
+			"UserName": {
+			  "type": "string"
+			},
+			"Password": {
+			  "type": "string"
+			},
+			"Email": {
+			  "type": "string"
+			},
+			"IsActive": {
+			  "type": "string"
+			},
+			"IsAdmin": {
+			  "type": "string"
+			},
+			"LastLoginTime": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"Creator": {
+			  "type": "string"
+			},
+			"ModifiedDate": {
+			  "type": "string"
+			},
+			"Modifier": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "Id": "",
+			  "AccountId": "",
+			  "UserName": "",
+			  "Password": "",
+			  "Email": "",
+			  "IsActive": "",
+			  "IsAdmin": "",
+			  "LastLoginTime": "",
+			  "CreatedDate": "",
+			  "Creator": "",
+			  "ModifiedDate": "",
+			  "Modifier": ""
+			}
+		  ]
+		},
+		"Users-UpdateRequest": {
+		  "title": "Users-UpdateRequest",
+		  "required": [
+			"Id",
+			"AccountId",
+			"UserName",
+			"Password",
+			"Email",
+			"IsActive",
+			"IsAdmin",
+			"LastLoginTime",
+			"CreatedDate",
+			"Creator",
+			"ModifiedDate",
+			"Modifier"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"Id": {
+			  "type": "string"
+			},
+			"AccountId": {
+			  "type": "string"
+			},
+			"UserName": {
+			  "type": "string"
+			},
+			"Password": {
+			  "type": "string"
+			},
+			"Email": {
+			  "type": "string"
+			},
+			"IsActive": {
+			  "type": "string"
+			},
+			"IsAdmin": {
+			  "type": "string"
+			},
+			"LastLoginTime": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"Creator": {
+			  "type": "string"
+			},
+			"ModifiedDate": {
+			  "type": "string"
+			},
+			"Modifier": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "Id": "",
+			  "AccountId": "",
+			  "UserName": "",
+			  "Password": "",
+			  "Email": "",
+			  "IsActive": "",
+			  "IsAdmin": "",
+			  "LastLoginTime": "",
+			  "CreatedDate": "",
+			  "Creator": "",
+			  "ModifiedDate": "",
+			  "Modifier": ""
+			}
+		  ]
+		},
+		"Users-DeleteRequest": {
+		  "title": "Users-DeleteRequest",
+		  "required": [
+			"Id",
+			"AccountId",
+			"UserName",
+			"Password",
+			"Email",
+			"IsActive",
+			"IsAdmin",
+			"LastLoginTime",
+			"CreatedDate",
+			"Creator",
+			"ModifiedDate",
+			"Modifier"
+		  ],
+		  "type": "object",
+		  "properties": {
+			"Id": {
+			  "type": "string"
+			},
+			"AccountId": {
+			  "type": "string"
+			},
+			"UserName": {
+			  "type": "string"
+			},
+			"Password": {
+			  "type": "string"
+			},
+			"Email": {
+			  "type": "string"
+			},
+			"IsActive": {
+			  "type": "string"
+			},
+			"IsAdmin": {
+			  "type": "string"
+			},
+			"LastLoginTime": {
+			  "type": "string"
+			},
+			"CreatedDate": {
+			  "type": "string"
+			},
+			"Creator": {
+			  "type": "string"
+			},
+			"ModifiedDate": {
+			  "type": "string"
+			},
+			"Modifier": {
+			  "type": "string"
+			}
+		  },
+		  "examples": [
+			{
+			  "Id": "",
+			  "AccountId": "",
+			  "UserName": "",
+			  "Password": "",
+			  "Email": "",
+			  "IsActive": "",
+			  "IsAdmin": "",
+			  "LastLoginTime": "",
+			  "CreatedDate": "",
+			  "Creator": "",
+			  "ModifiedDate": "",
+			  "Modifier": ""
+			}
+		  ]
+		}
+	  },
+	  "securitySchemes": {
+		"bearer": {
+		  "type": "http",
+		  "scheme": "bearer"
+		}
+	  }
+	},
+	"security": [],
+	"tags": [
+	  {
+		"name": "Misc",
+		"description": ""
+	  }
+	]
+  }
